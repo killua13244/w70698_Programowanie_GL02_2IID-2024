@@ -1,4 +1,7 @@
-
+setInterval(function() {
+    const now = new Date();
+    document.getElementById("czas").innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+}, 1000);
 function zmienTekst() {
     document.getElementById("tekst").innerHTML = "Witaj na mojej stronie!";
     alert("Witaj na stronie");
@@ -10,10 +13,7 @@ function zmienTekst() {
     let a = prompt("1 liczba: ");  
     let b = prompt("2 liczba: "); 
     document.getElementById("dod").innerHTML = parseInt(a) + parseInt(b);
-    setInterval(function() {
-        const now = new Date();
-        document.getElementById("czas").innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-    }, 1000);
+
 }
 function getRandomInt(min, max) {
     const minCeiled = Math.ceil(min);
