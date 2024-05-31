@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <div>
+            <label for="imie">imie:</label>
+            <input type="text" id="imie" required>
+            <div id="imieError" class="error-message"></div>
+        </div>
+        <div>
+            <label for="nazwisko">nazwisko:</label>
+            <input type="text" id="nazwisko" required>
+            <div id="nazwiskoError" class="error-message"></div>
+        </div>
+        <div>
+            <label for="mail">mail:</label>
+            <input type="email" id="mail" required>
+            <div id="mailError" class="error-message"></div>
+        </div>
+        <div>
+            <label for="haslo">haslo:</label>
+            <input type="password" id="haslo" minlength="8" required>
+            <div id="hasloError" class="error-message"></div>
+        </div>
+        <div>
+            <label for="hasloPowtorz">powtórz hasło:</label>
+            <input type="password" id="hasloPowtorz" minlength="8" required>
+            <div id="hasloPowtorzError" class="error-message"></div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <input type="text" id="imieInput" placeholder="Imię">
+    <input type="text" id="nazwiskoInput" placeholder="Nazwisko">
+    <button id="dodajButton">Dodaj do tabeli</button>
+    
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaBody">
+        </tbody>
+    </table>
+
+    <script src="lab10.js"></script>
+</body>
+</html>

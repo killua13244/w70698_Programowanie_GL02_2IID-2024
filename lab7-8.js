@@ -1,3 +1,51 @@
+// Definicja obiektu Samochod
+function Samochod(marka, model, rokProdukcji, kolor, predkosc) {
+    this.marka = marka;
+    this.model = model;
+    this.rokProdukcji = rokProdukcji;
+    this.kolor = kolor;
+    this.predkosc = predkosc || 0; // Domyślna prędkość to 0, jeśli nie podano innej wartości
+}
+
+// Metoda do zwiększania prędkości
+Samochod.prototype.zwiekszPredkosc = function(kwota) {
+    this.predkosc += kwota;
+    return this.predkosc;
+}
+
+// Metoda do zmniejszania prędkości
+Samochod.prototype.zmniejszPredkosc = function(kwota) {
+    this.predkosc -= kwota;
+    if (this.predkosc < 0) {
+        this.predkosc = 0; // Prędkość nie może być ujemna
+    }
+    return this.predkosc;
+}
+
+// Metoda zwracająca informacje o samochodzie
+Samochod.prototype.informacje = function() {
+    return `${this.marka} ${this.model} (${this.rokProdukcji}), Kolor: ${this.kolor}, Prędkość: ${this.predkosc} km/h`;
+}
+
+// Przykład użycia obiektu Samochod
+var mojSamochod = new Samochod("Toyota", "Corolla", 2020, "Czerwony", 50);
+
+console.log(mojSamochod.informacje()); // Toyota Corolla (2020), Kolor: Czerwony, Prędkość: 50 km/h
+
+mojSamochod.zwiekszPredkosc(20);
+console.log(mojSamochod.informacje()); // Toyota Corolla (2020), Kolor: Czerwony, Prędkość: 70 km/h
+
+mojSamochod.zmniejszPredkosc(30);
+console.log(mojSamochod.informacje()); // Toyota Corolla (2020), Kolor: Czerwony, Prędkość: 40 km/h
+
+mojSamochod.zmniejszPredkosc(50);
+console.log(mojSamochod.informacje()); // Toyota Corolla (2020), Kolor: Czerwony, Prędkość: 0 km/h
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("myForm").addEventListener("submit", function(event) {
         var imie = document.getElementById("imie").value;
@@ -98,3 +146,4 @@ document.addEventListener("DOMContentLoaded", function() {
         errorField.textContent = message;
     }
 });
+
